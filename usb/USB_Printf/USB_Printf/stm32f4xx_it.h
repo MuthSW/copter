@@ -45,7 +45,6 @@ void DebugMon_Handler(void);
 void PendSV_Handler(void);
 void SysTick_Handler(void);
 void OTG_FS_IRQHandler(void);
-void USART3_IRQHandler(void);
 
 #ifdef __cplusplus
 }

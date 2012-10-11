@@ -1,4 +1,3 @@
-Virtual COM port using the USB CDC device.
-
-Todo:
-Linecoding and other such requests are not handled.
+Call printf to print to serial port.
+Call uprintf to print to a terminal using the USB CDC device.
+ 

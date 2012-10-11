@@ -23,6 +23,7 @@
 #include "usbd_usr.h"
 #include "usbd_desc.h"
 
+#include "stm32f4xx_usart.h"
 #include "main.h"
 
 /* Private typedef -----------------------------------------------------------*/
@@ -35,25 +36,18 @@
   #endif
 #endif /* USB_OTG_HS_INTERNAL_DMA_ENABLED */
 
-//USB CDC variables
+
+/* USB CDC Variables */
 __ALIGN_BEGIN USB_OTG_CORE_HANDLE  USB_OTG_dev __ALIGN_END;
 extern uint8_t  APP_Rx_Buffer [];
 extern uint32_t APP_Rx_ptr_in;
 
-LINE_CODING linecoding =
-  {
-    115200, /* baud rate*/
-    0x00,   /* stop bits-1*/
-    0x00,   /* parity - none*/
-    0x08    /* no. of bits 8*/
-  };
-
 /* Private function prototypes -----------------------------------------------*/
-void NVIC_Config(void);
-void SERIAL_Init(void);
+//void SERIAL_Init(void);
+int OutByte(int ch);
+int uartPutch(int ch);
+int uartGetch(void);
 
-/* Extern variables ----------------------------------------------------------*/
-/* Private functions ---------------------------------------------------------*/
 /*******************************************************************************
 * Function Name  : main.
 * Description    : Main routine.
@@ -63,38 +57,23 @@ void SERIAL_Init(void);
 *******************************************************************************/
 int main(void)
 {
-	NVIC_Config();
+	  SERIAL_Init();
 
-	SERIAL_Init();
-	//Enable USART RX irq
-	USART_ITConfig(EVAL_COM1, USART_IT_RXNE, ENABLE);
+	  USBD_Init(&USB_OTG_dev,
+		  USB_OTG_FS_CORE_ID,
+	      &USR_desc,
+	      &USBD_CDC_cb,
+	      &USR_cb);
 
-	USBD_Init(&USB_OTG_dev,
-				USB_OTG_FS_CORE_ID,
-	            &USR_desc,
-	            &USBD_CDC_cb,
-	            &USR_cb);
-  
-	while (1)
-	{
-	}
-
-}
-/**
-  * @brief  Configures the nested vectored interrupt controller.
-  * @param  None
-  * @retval None
-  */
-void NVIC_Config(void)
-{
-  NVIC_InitTypeDef NVIC_InitStructure;
-
-  /* Enable the USARTx Interrupt */
-  NVIC_InitStructure.NVIC_IRQChannel = EVAL_COM1_IRQn;
-  NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
-  NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
-  NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
-  NVIC_Init(&NVIC_InitStructure);
+	  while (1)  {
+/*	  	
+		  uartGetch();
+		  //printf over serial port
+		  TestPrintf();
+		  //printf over usb CDC
+*/
+		  uTestPrintf();
+	  }
 }
 /*******************************************************************************
 * Function Name  :  USART_Config_Default.
@@ -105,45 +84,56 @@ void NVIC_Config(void)
 void SERIAL_Init(void)
 {
 	USART_InitTypeDef USART_InitStructure;
-
-	  /* USARTx configured as follow:
-	        - BaudRate = 115200 baud
-	        - Word Length = 8 Bits
-	        - One Stop Bit
-	        - No parity
-	        - Hardware flow control disabled (RTS and CTS signals)
-	        - Receive and transmit enabled
-	  */
-	  USART_InitStructure.USART_BaudRate = 115200;
-	  USART_InitStructure.USART_WordLength = USART_WordLength_8b;
-	  USART_InitStructure.USART_StopBits = USART_StopBits_1;
-	  USART_InitStructure.USART_Parity = USART_Parity_No;
-	  USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;
-	  USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;
-
-	  STM_EVAL_COMInit(COM1, &USART_InitStructure);
-
+	/* USARTx configured as follow:
+	      - BaudRate = 115200 baud
+	      - Word Length = 8 Bits
+	      - One Stop Bit
+	      - No parity
+	      - Hardware flow control disabled (RTS and CTS signals)
+	      - Receive and transmit enabled
+	 */
+	USART_InitStructure.USART_BaudRate = 115200;
+	USART_InitStructure.USART_WordLength = USART_WordLength_8b;
+	USART_InitStructure.USART_StopBits = USART_StopBits_1;
+	USART_InitStructure.USART_Parity = USART_Parity_No;
+	USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;
+	USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;
+	STM_EVAL_COMInit(COM1, &USART_InitStructure);
 }
-/*******************************************************************************
-* Function Name  : UART_To_USB_Send_Data.
-* Description    : send the received data from UART 0 to USB.
-* Input          : None.
-* Return         : none.
-*******************************************************************************/
-void USART_To_USB_Send_Data(void)
-{
 
-	if (linecoding.datatype == 7)
-		APP_Rx_Buffer[APP_Rx_ptr_in] = USART_ReceiveData(EVAL_COM1) & 0x7F;
-
-	else if (linecoding.datatype == 8)
-		APP_Rx_Buffer[APP_Rx_ptr_in] = USART_ReceiveData(EVAL_COM1);
-
+/**
+  * @brief  Outputs a char to the USART.
+  * @param  char
+  * @retval char
+  */
+int UsbOutByte(int ch) {
+	APP_Rx_Buffer[APP_Rx_ptr_in]=ch;
 	APP_Rx_ptr_in++;
-
-	/* To avoid buffer overflow */
 	if(APP_Rx_ptr_in == APP_RX_DATA_SIZE) APP_Rx_ptr_in = 0;
+}
 
+/**
+  * @brief  Outputs a char to the USART.
+  * @param  char
+  * @retval char
+  */
+int uartPutch(int ch) {
+	USART_SendData(EVAL_COM1, (uint8_t) ch);
+	/* Loop until the end of transmission */
+	while (USART_GetFlagStatus(EVAL_COM1, USART_FLAG_TC) == RESET) {}
+}
+
+/**
+  * @brief  Waits for then gets a char from the USART.
+  * @param  none
+  * @retval char
+  */
+int uartGetch() {
+	int ch;
+	while (USART_GetFlagStatus(EVAL_COM1, USART_FLAG_RXNE) == RESET) {}
+	ch=USART_ReceiveData(EVAL_COM1);
+	//uartPutch(ch);
+	return ch;
 }
 
 #ifdef USE_FULL_ASSERT

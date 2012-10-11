@@ -160,7 +160,7 @@ __ALIGN_BEGIN uint8_t USBD_DeviceDesc[USB_SIZ_DEVICE_DESC] __ALIGN_END =
     		0x02,						// bDeviceClass
     		0x00,						// bDeviceSubClass
     		0x00,						// bDeviceProtocol
-    		MAX_PACKET_SIZE0,			// bMaxPacketSize
+    		USB_OTG_MAX_EP0_SIZE,		// bMaxPacketSize
     		LE_WORD(0xFFFF),			// idVendor
     		LE_WORD(0x0005),			// idProduct
     		LE_WORD(0x0100),			// bcdDevice

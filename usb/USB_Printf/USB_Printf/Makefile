@@ -1,5 +1,5 @@
-EXECUTABLE=virtualCOM.elf
-BIN_IMAGE=virtualCOM.bin
+EXECUTABLE=USB_Printf.elf
+BIN_IMAGE=USB_Printf.bin
 
 CC=arm-none-eabi-gcc
 OBJCOPY=arm-none-eabi-objcopy
@@ -48,6 +48,8 @@ $(EXECUTABLE): main.c system_stm32f4xx.c startup_stm32f4xx.s stm32f4xx_it.c \
 	../libstm/STM32_USB_Device_Library/Core/src/usbd_req.c \
 	../libstm/STM32_USB_Device_Library/Core/src/usbd_ioreq.c \
 	../libstm/STM32_USB_Device_Library/Class/cdc/src/usbd_cdc_core.c \
+	../libstm/Utilities/printf.c \
+	../libstm/Utilities/uprintf.c
 
 		
 	$(CC) $(CFLAGS) $^ -o $@  -L../libstm/STM32F4xx_StdPeriph_Driver/build -lSTM32F4xx_StdPeriph_Driver -L../libstm/STM32F_USB_OTG_Driver/build

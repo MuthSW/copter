@@ -190,21 +190,4 @@ void OTG_FS_IRQHandler(void)
   USBD_OTG_ISR_Handler (&USB_OTG_dev);
 }
 
-void USART3_IRQHandler(void)
-{
-  if (USART_GetITStatus(EVAL_COM1, USART_IT_RXNE) != RESET)
-  {
-    /* Send the received data to the PC Host*/
-    USART_To_USB_Send_Data();
-  }
-
-  /* If overrun condition occurs, clear the ORE flag and recover communication */
-  if (USART_GetFlagStatus(EVAL_COM1, USART_FLAG_ORE) != RESET)
-  {
-    (void)USART_ReceiveData(EVAL_COM1);
-  }
-}
-
-
-
 /******************* (C) COPYRIGHT 2011 STMicroelectronics *****END OF FILE****/

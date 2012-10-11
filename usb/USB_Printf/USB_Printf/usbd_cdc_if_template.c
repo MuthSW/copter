@@ -68,7 +68,7 @@ static uint16_t TEMPLATE_Init(void)
 {
   /*
      Add your initialization code here 
-  */  
+  */
   return USBD_OK;
 }
 
@@ -152,22 +152,24 @@ static uint16_t TEMPLATE_Ctrl (uint32_t Cmd, uint8_t* Buf, uint32_t Len)
   */
 static uint16_t TEMPLATE_DataTx (uint8_t* Buf, uint32_t Len)
 {
-	int i;
-	/* Get the data to be sent */
-	for (i = 0; i < Len; i++)
-	{
-		/* APP_Rx_Buffer[APP_Rx_ptr_in] = XXX_ReceiveData(XXX); */
-	}
+	//Doesn't seem to happen!
+#if(0)
+	  /* Get the data to be sent */
+	  for (i = 0; i < Len; i++)
+	  {
+	    /* APP_Rx_Buffer[APP_Rx_ptr_in] = XXX_ReceiveData(XXX); */
+	  }
 
-	/* Increment the in pointer */
-	APP_Rx_ptr_in++;
-  
-	/* To avoid buffer overflow */
-	if(APP_Rx_ptr_in == APP_RX_DATA_SIZE)
-	{
-		APP_Rx_ptr_in = 0;
-	}
-  
+	  /* Increment the in pointer */
+	  APP_Rx_ptr_in++;
+
+	  /* To avoid buffer overflow */
+	  if(APP_Rx_ptr_in == APP_RX_DATA_SIZE)
+	  {
+	    APP_Rx_ptr_in = 0;
+	  }
+#endif
+
 	return USBD_OK;
 }
 
@@ -189,16 +191,13 @@ static uint16_t TEMPLATE_DataTx (uint8_t* Buf, uint32_t Len)
 static uint16_t TEMPLATE_DataRx (uint8_t* Buf, uint32_t Len)
 {
   uint32_t i;
-
+  
   /* Send the received buffer */
   for (i = 0; i < Len; i++)
   {
-		USART_SendData(EVAL_COM1, *(Buf + i));
-		/* Loop until the end of transmission */
-		while (USART_GetFlagStatus(EVAL_COM1, USART_FLAG_TC) == RESET) {}
-		/* XXXX_SendData(XXXX, *(Buf + i) ); */
+    /* XXXX_SendData(XXXX, *(Buf + i) ); */
   } 
-
+ 
   return USBD_OK;
 }
 
