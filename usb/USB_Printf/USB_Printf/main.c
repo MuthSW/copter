@@ -56,15 +56,33 @@ int uartGetch(void);
 *******************************************************************************/
 int main(void)
 {
+	initializeLEDs();	// onboard LED init
+
+	switchLED(LEDGreen, ON);	// we're ready
+
 	SERIAL_Init();
 
 	USBD_Init(&USB_OTG_dev, USB_OTG_FS_CORE_ID, &USR_desc, &USBD_CDC_cb, &USR_cb);
 
 	while (1)
 	{
-		uTestPrintf();
+		// switchLED(LEDRed, ON);
 
-		delayMs(1000);
+//		uTestPrintf();
+		uprintf("Press a key!\n");
+		
+//		UsbOutByte(64);
+
+		// wait for USB input		
+		uartGetch();
+
+		uprintf("ok\n\n");
+
+		// delayMs(1000);
+
+		// switchLED(LEDRed, OFF);
+
+		// delayMs(1000);
 	}
 }
 /*******************************************************************************

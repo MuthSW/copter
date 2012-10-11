@@ -52,12 +52,12 @@
 #define USBD_PID                     0x5710
 
 #define USBD_LANGID_STRING            0x409
-#define USBD_MANUFACTURER_STRING      "STMicroelectronics"
+#define USBD_MANUFACTURER_STRING      "Markus Knapp"
 
-#define USBD_PRODUCT_HS_STRING        "VirtualComm HS mode"
+#define USBD_PRODUCT_HS_STRING        "Copter HS mode"
 #define USBD_SERIALNUMBER_HS_STRING   "00000000011B"
 
-#define USBD_PRODUCT_FS_STRING        "VirtualComm FS Mode"
+#define USBD_PRODUCT_FS_STRING        "Copter FS Mode"
 #define USBD_SERIALNUMBER_FS_STRING   "00000000011C"
 
 #define USBD_CONFIGURATION_HS_STRING  "CDC Config"
