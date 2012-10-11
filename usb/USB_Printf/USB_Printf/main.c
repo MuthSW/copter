@@ -24,7 +24,7 @@
 #include "usbd_desc.h"
 
 #include "stm32f4xx_usart.h"
-#include "utils.h"
+#include "utils.h" // for delayMs
 #include "main.h"
 
 /* Private typedef -----------------------------------------------------------*/
@@ -58,23 +58,16 @@ int uartGetch(void);
 *******************************************************************************/
 int main(void)
 {
-	  SERIAL_Init();
+	SERIAL_Init();
 
-	  USBD_Init(&USB_OTG_dev,
-		  USB_OTG_FS_CORE_ID,
-	      &USR_desc,
-	      &USBD_CDC_cb,
-	      &USR_cb);
+	USBD_Init(&USB_OTG_dev, USB_OTG_FS_CORE_ID, &USR_desc, &USBD_CDC_cb, &USR_cb);
 
-	  while (1)  {
-/*	  	
-		  uartGetch();
-		  //printf over serial port
-		  TestPrintf();
-		  //printf over usb CDC
-*/
-		  uTestPrintf();
-	  }
+	while (1)
+	{
+		uTestPrintf();
+
+		delayMs(1000);
+	}
 }
 /*******************************************************************************
 * Function Name  :  USART_Config_Default.
