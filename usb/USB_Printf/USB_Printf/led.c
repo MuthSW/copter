@@ -1,21 +1,3 @@
-/*
-Title:    led.c
-Author:   Markus Knapp <markus@recopter.de> http://recopter.de
-Version:  0.1
-Software: summon-arm-toolchain
-License:
-
-DESCRIPTION:
-
-
-USAGE:
-
-
-NOTES:
-
- */
-
-
 /* Includes */
 #include "led.h"
 

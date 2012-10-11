@@ -1,10 +1,3 @@
-/*
- * led.h
- *
- *  Created on: 28.05.2012
- *      Author: markus
- */
-
 #ifndef __LED_H
 #define __LED_H
 
@@ -15,7 +8,24 @@
 
 /* Includes */
 #include "stm32f4xx.h"
-#include "defaults.h"
+#include "stm32f4xx_conf.h"
+
+#define ON				ENABLE
+#define OFF				DISABLE
+
+/* Typedefs */
+typedef struct {
+ 	GPIO_TypeDef* Port;
+ 	uint32_t Clock;
+ 	uint16_t Pin;
+ } led;
+
+ /* Variables */
+led LEDGreen;
+led LEDOrange;
+led LEDRed;
+led LEDBlue;
+
 
 /* Functions */
 void initializeLEDs();
