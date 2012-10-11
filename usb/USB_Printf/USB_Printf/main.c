@@ -24,6 +24,7 @@
 #include "usbd_desc.h"
 
 #include "stm32f4xx_usart.h"
+#include "utils.h"
 #include "main.h"
 
 /* Private typedef -----------------------------------------------------------*/
