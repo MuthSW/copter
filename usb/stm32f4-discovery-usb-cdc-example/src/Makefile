@@ -39,6 +39,9 @@ CFLAGS+=-I../Libraries/Device/STM32F4xx/Include
 CFLAGS+=-I../Libraries/CMSIS/Include
 
 
+# fehlt:			<listOptionValue builtIn="false" value="&quot;D:/stm32f4-projects/atollic workspace/stm32f4-discovery-usb-cdc-example/Utilities/STM32_EVAL&quot;"/>
+# müsste jetzt dieser sein: CFLAGS+=-I../Libraries/STM32F4xx_StdPeriph_Driver/inc
+
 all: $(BIN_IMAGE)
 
 $(BIN_IMAGE): $(EXECUTABLE)
