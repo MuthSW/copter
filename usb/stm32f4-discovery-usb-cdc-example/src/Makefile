@@ -31,8 +31,9 @@ CFLAGS+=-I../Libraries/STM32_USB_OTG_Driver/inc
 #STM32F4xx_StdPeriph_Driver\inc
 CFLAGS+=-I../Libraries/STM32F4xx_StdPeriph_Driver/inc
 
-#Utilities
-CFLAGS+=-I../Libraries/Utilities/STM32F4-Discovery
+#
+CFLAGS+=-I../Libraries/Device/STM32F4xx/Include
+CFLAGS+=-I../Libraries/CMSIS/Include
 
 all: $(BIN_IMAGE)
 
