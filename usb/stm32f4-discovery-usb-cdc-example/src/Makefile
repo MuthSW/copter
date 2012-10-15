@@ -40,7 +40,7 @@ $(BIN_IMAGE): $(EXECUTABLE)
 	$(OBJCOPY) -O binary $^ $@
 
 $(EXECUTABLE): main.c system_stm32f4xx.c startup_stm32f4xx.s stm32f4xx_it.c \
-	usb_bsp.c usbd_desc.c usbd_usr.c usb_conf.c usbd_cdc.c \
+	usb_bsp.c usbd_desc.c usbd_usr.c usbd_cdc.c \
 	stm32f4_discovery.c \
 	../Libraries/STM32_USB_OTG_Driver/src/usb_dcd_int.c \
 	../Libraries/STM32_USB_OTG_Driver/src/usb_dcd.c \
