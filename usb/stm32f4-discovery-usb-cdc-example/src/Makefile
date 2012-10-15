@@ -25,6 +25,7 @@ CFLAGS+=-I../Libraries/STM32_USB_Device_Library/Class/cdc/inc
 CFLAGS+=-I../Libraries/STM32_USB_Device_Library/Core/inc
 CFLAGS+=-I../Libraries/STM32_USB_OTG_Driver/inc
 CFLAGS+=-I../Libraries/STM32F4xx_StdPeriph_Driver/inc
+CFLAGS+=-I../Utilities/STM32F4-Discovery
 
 # alt von mir CFLAGS+=-I../Libraries/STM32F4xx_StdPeriph_Driver/inc/device_support
 # alt von mir CFLAGS+=-I../Libraries/STM32F4xx_StdPeriph_Driver/inc/core_support
