@@ -26,6 +26,9 @@ CFLAGS+=-I../lib/STM32_USB_Device_Library/Class/cdc/inc
 CFLAGS+=-I../lib/STM32_USB_Device_Library/Core/inc
 CFLAGS+=-I./
 CFLAGS+=-I../lib/STM32_USB_OTG_Driver/inc
+# for usb_conf.h: Use Full speed (FS) on USB
+CFLAGS+=-DUSE_USB_OTG_FS=1
+
 
 all: $(BIN_IMAGE)
 
