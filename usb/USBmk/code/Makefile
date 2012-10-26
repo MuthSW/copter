@@ -25,6 +25,7 @@ LDFLAGS+=-L../lib/build -lSTM32F4xx_StdPeriph_Driver
 CFLAGS+=-I../lib/STM32_USB_Device_Library/Class/cdc/inc
 CFLAGS+=-I../lib/STM32_USB_Device_Library/Core/inc
 CFLAGS+=-I./
+CFLAGS+=-I../lib/STM32_USB_OTG_Driver/inc
 
 all: $(BIN_IMAGE)
 
