@@ -21,6 +21,9 @@ CFLAGS+=-I../lib/inc/device_support
 CFLAGS+=-I../lib/inc/core_support 
 LDFLAGS+=-L../lib/build -lSTM32F4xx_StdPeriph_Driver
 
+# USB stuff
+CFLAGS+=-I../lib/STM32_USB_Device_Library/Class/cdc/inc
+
 all: $(BIN_IMAGE)
 
 $(BIN_IMAGE): $(EXECUTABLE)
