@@ -28,6 +28,8 @@ CFLAGS+=-I./
 CFLAGS+=-I../lib/STM32_USB_OTG_Driver/inc
 # for usb_conf.h: Use Full speed (FS) on USB
 CFLAGS+=-DUSE_USB_OTG_FS=1
+# for COM1 definition:
+CFLAGS+=-I../lib/Utilities/STM32F4-Discovery
 
 
 all: $(BIN_IMAGE)
@@ -35,8 +37,9 @@ all: $(BIN_IMAGE)
 $(BIN_IMAGE): $(EXECUTABLE)
 	$(OBJCOPY) -O binary $^ $@
 
-$(EXECUTABLE): main.c main.h usart.c string.c system_stm32f4xx.c startup_stm32f4xx.s stm32f4xx_it.c
-	$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)
+$(EXECUTABLE):	main.c main.h usart.c string.c system_stm32f4xx.c startup_stm32f4xx.s stm32f4xx_it.c \
+				../lib/Utilities/STM32F4-Discovery/stm32f4_discovery.c \
+				$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)
 
 clean:
 	rm -rf $(EXECUTABLE)
