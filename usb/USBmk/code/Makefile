@@ -42,7 +42,8 @@ $(BIN_IMAGE): $(EXECUTABLE)
 $(EXECUTABLE): main.c system_stm32f4xx.c startup_stm32f4xx.s stm32f4xx_it.c \
 	usb_bsp.c usbd_desc.c usbd_usr.c usb_core.c  usbd_cdc_if_template.c \
 	../lib/Utilities/STM32F4-Discovery/stm32f4_discovery.c \
-	../lib/Utilities/printf.c
+	../lib/Utilities/printf.c \
+	../lib/Utilities/uprintf.c
 				
 	$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)
 
