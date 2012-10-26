@@ -38,7 +38,8 @@ $(BIN_IMAGE): $(EXECUTABLE)
 	$(OBJCOPY) -O binary $^ $@
 
 $(EXECUTABLE):	main.c main.h usart.c string.c system_stm32f4xx.c startup_stm32f4xx.s stm32f4xx_it.c \
-				../lib/Utilities/STM32F4-Discovery/stm32f4_discovery.c \
+				../lib/Utilities/STM32F4-Discovery/stm32f4_discovery.c
+				
 				$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)
 
 clean:
