@@ -8,8 +8,13 @@ CFLAGS=-g -O2 -mlittle-endian -mthumb
 CFLAGS+=-mcpu=cortex-m4
 CFLAGS+=-ffreestanding -nostdlib
 
+# for usb_conf.h: Use Full speed (FS) on USB
+CFLAGS+=-DUSE_USB_OTG_FS=1
+
 # to run from FLASH
 CFLAGS+=-Wl,-T,stm32_flash.ld
+
+CFLAGS+=-I./
 
 # Default C stuff
 CFLAGS+=-I/opt/local/arm-none-eabi/include
@@ -24,10 +29,7 @@ LDFLAGS+=-L../lib/build -lSTM32F4xx_StdPeriph_Driver
 # USB stuff
 CFLAGS+=-I../lib/STM32_USB_Device_Library/Class/cdc/inc
 CFLAGS+=-I../lib/STM32_USB_Device_Library/Core/inc
-CFLAGS+=-I./
 CFLAGS+=-I../lib/STM32_USB_OTG_Driver/inc
-# for usb_conf.h: Use Full speed (FS) on USB
-CFLAGS+=-DUSE_USB_OTG_FS=1
 # for COM1 definition:
 CFLAGS+=-I../lib/Utilities/STM32F4-Discovery
 
