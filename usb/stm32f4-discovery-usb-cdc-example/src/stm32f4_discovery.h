@@ -34,6 +34,7 @@
 #include "stm32f4xx_rcc.h" // for RCC_AHB1Periph_GPIOA
 #include "stm32f4xx_exti.h" // for EXTI_Line0
 #include "misc.h" // for NVIC_InitTypeDef
+  #include "stm32f4xx_syscfg.h" // for EXTI_PinSource0
    
 /** @addtogroup Utilities
   * @{
