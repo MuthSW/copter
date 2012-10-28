@@ -17,22 +17,25 @@ CFLAGS+=-Wl,-T,stm32_flash.ld
 CFLAGS+=-I./
 
 # stm32f4_discovery lib
-CFLAGS+=-I../../STM32F4xx_StdPeriph_Driver/inc
-CFLAGS+=-I../../STM32F4xx_StdPeriph_Driver/inc/device_support
-CFLAGS+=-I../../STM32F4xx_StdPeriph_Driver/inc/core_support
+CFLAGS+=-I../lib/STM32F4xx_StdPeriph_Driver/inc
+CFLAGS+=-I../lib/STM32F4xx_StdPeriph_Driver/inc/device_support
+CFLAGS+=-I../lib/STM32F4xx_StdPeriph_Driver/inc/core_support
 
 #STM32_USB_Device_Library
-CFLAGS+=-I../../STM32_USB_Device_Library/Class/cdc/inc
-CFLAGS+=-I../../STM32_USB_Device_Library/Core/inc
+CFLAGS+=-I../lib/STM32_USB_Device_Library/Class/cdc/inc
+CFLAGS+=-I../lib/STM32_USB_Device_Library/Core/inc
 
 #STM32_USB_OTG_Driver
-CFLAGS+=-I../../STM32_USB_OTG_Driver/inc
+CFLAGS+=-I../lib/STM32_USB_OTG_Driver/inc
 
 #STM32F4xx_StdPeriph_Driver\inc
-CFLAGS+=-I../../STM32F4xx_StdPeriph_Driver/inc
+CFLAGS+=-I../lib/STM32F4xx_StdPeriph_Driver/inc
 
 #Utilities
-CFLAGS+=-I../../Utilities/STM32F4-Discovery
+CFLAGS+=-I../lib/STM32F4-Discovery
+# Markus:
+CFLAGS+=-I../lib/CMSIS/Include
+CFLAGS+=-I../lib/CMSIS/ST/STM32F4xx/Include
 
 all: $(BIN_IMAGE)
 
@@ -42,15 +45,15 @@ $(BIN_IMAGE): $(EXECUTABLE)
 #stm32f4xx_it.c
 $(EXECUTABLE): main.c system_stm32f4xx.c startup_stm32f4xx.s stm32fxxx_it.c \
 	usb_bsp.c usbd_desc.c usbd_usr.c usb_core.c usbd_cdc_vcp.c\
-	../../Utilities/STM32F4-Discovery/stm32f4_discovery.c \
-	../../STM32_USB_OTG_Driver/src/usb_dcd_int.c \
-	../../STM32_USB_OTG_Driver/src/usb_dcd.c \
-	../../STM32_USB_Device_Library/Core/src/usbd_core.c \
-	../../STM32_USB_Device_Library/Core/src/usbd_req.c \
-	../../STM32_USB_Device_Library/Core/src/usbd_ioreq.c \
-	../../STM32_USB_Device_Library/Class/cdc/src/usbd_cdc_core.c
+	../lib/STM32F4-Discovery/stm32f4_discovery.c \
+	../lib/STM32_USB_OTG_Driver/src/usb_dcd_int.c \
+	../lib/STM32_USB_OTG_Driver/src/usb_dcd.c \
+	../lib/STM32_USB_Device_Library/Core/src/usbd_core.c \
+	../lib/STM32_USB_Device_Library/Core/src/usbd_req.c \
+	../lib/STM32_USB_Device_Library/Core/src/usbd_ioreq.c \
+	../lib/STM32_USB_Device_Library/Class/cdc/src/usbd_cdc_core.c
 			
-	$(CC) $(CFLAGS) $^ -o $@  -L../../STM32F4xx_StdPeriph_Driver/build -lSTM32F4xx_StdPeriph_Driver -L../../STM32F_USB_OTG_Driver/build
+	$(CC) $(CFLAGS) $^ -o $@  -L../lib/STM32F4xx_StdPeriph_Driver/build -lSTM32F4xx_StdPeriph_Driver -L../lib/STM32F_USB_OTG_Driver/build
 
 clean:
 	rm -rf $(EXECUTABLE)
