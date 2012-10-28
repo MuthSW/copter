@@ -20,12 +20,18 @@ CFLAGS += -I../../CMSIS/Include
 CFLAGS += -I../../../src
 # for stm32f4xx_gpio.h
 CFLAGS+=-I../../STM32F4xx_StdPeriph_Driver/inc
+# for usbd_cdc_core.c
+CFLAGS+=-I../../STM32_USB_Device_Library/Class/cdc/inc
+# for usbd_def.h
+CFLAGS+=-I../../STM32_USB_Device_Library/Core/inc
 
 
 SRCS = \
 ../src/usb_core.c \
 ../src/usb_dcd_int.c \
-../src/usb_dcd.c
+../src/usb_dcd.c \
+../../STM32_USB_Device_Library/Class/cdc/src/usbd_cdc_core.c
+
 
 OBJS = $(SRCS:.c=.o)
 
