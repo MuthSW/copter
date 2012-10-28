@@ -47,7 +47,8 @@ $(BIN_IMAGE): $(EXECUTABLE)
 
 
 $(EXECUTABLE): main.c system_stm32f4xx.c startup_stm32f4xx.s stm32f4xx_it.c \
-	usb_bsp.c usbd_desc.c usbd_usr.c usb_core.c \
+	usb_bsp.c usbd_desc.c usbd_usr.c \
+	../Libraries/STM32_USB_OTG_Driver/src/usb_core.c \
 #	../../Utilities/STM32F4-Discovery/stm32f4_discovery.c \
 #	../../Utilities/STM32F4-Discovery/stm32f4_discovery_audio_codec.c \
 #	../../Utilities/STM32F4-Discovery/stm32f4_discovery_lis302dl.c \
