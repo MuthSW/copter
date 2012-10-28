@@ -25,6 +25,7 @@
 #include "usbd_conf.h"
 #include "stm32f4_discovery.h"
 #include "stm32f4xx_gpio.h" // for GPIO_Pin_*
+#include "stm32f4xx_rcc.h" // for RCC_AHB1Periph_GPIOA
 
 /** @addtogroup STM32_USB_OTG_DEVICE_LIBRARY
 * @{
