@@ -64,19 +64,21 @@ $(EXECUTABLE): main.c system_stm32f4xx.c startup_stm32f4xx.s stm32f4xx_it.c \
 	usbd_req.c \
 	usb_dcd.c \
 	usbd_ioreq.c \
-	../Libraries/STM32_USB_OTG_Driver/src/usb_core.c \
+	../Libraries/STM32_USB_OTG_Driver/src/usb_core.c
 #	../../Utilities/STM32F4-Discovery/stm32f4_discovery.c \
 #	../../Utilities/STM32F4-Discovery/stm32f4_discovery_audio_codec.c \
 #	../../Utilities/STM32F4-Discovery/stm32f4_discovery_lis302dl.c \
-	../Libraries/STM32_USB_OTG_Driver/src/usb_dcd_int.c \
-	../Libraries/STM32_USB_OTG_Driver/src/usb_dcd.c \
-	../Libraries/STM32_USB_Device_Library/Core/src/usbd_core.c \
-	../Libraries/STM32_USB_Device_Library/Core/src/usbd_req.c \
-	../Libraries/STM32_USB_Device_Library/Core/src/usbd_ioreq.c \
-	../../STM32_USB_Device_Library/Class/cdc/src/usbd_cdc_core.c
+# Tag: TestMissingLibSTART
+#	../Libraries/STM32_USB_OTG_Driver/src/usb_dcd_int.c \
+#	../Libraries/STM32_USB_OTG_Driver/src/usb_dcd.c \
+#	../Libraries/STM32_USB_Device_Library/Core/src/usbd_core.c \
+#	../Libraries/STM32_USB_Device_Library/Core/src/usbd_req.c \
+#	../Libraries/STM32_USB_Device_Library/Core/src/usbd_ioreq.c \
+#	../../STM32_USB_Device_Library/Class/cdc/src/usbd_cdc_core.c
 
 		
-	$(CC) $(CFLAGS) $^ -o $@  -L../Libraries/STM32F4xx_StdPeriph_Driver/build -lSTM32F4xx_StdPeriph_Driver -L../Libraries/STM32F_USB_OTG_Driver/build
+	$(CC) $(CFLAGS) $^ -o $@  -L../Libraries/STM32F4xx_StdPeriph_Driver/build -lSTM32F4xx_StdPeriph_Driver
+#	$(CC) $(CFLAGS) $^ -o $@  -L../Libraries/STM32F4xx_StdPeriph_Driver/build -lSTM32F4xx_StdPeriph_Driver -L../Libraries/STM32F_USB_OTG_Driver/build
 
 clean:
 	rm -rf $(EXECUTABLE)
