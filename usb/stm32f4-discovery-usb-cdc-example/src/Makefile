@@ -40,6 +40,10 @@ CFLAGS+=-I../Libraries/STM32F4xx_StdPeriph_Driver/inc
 #Utilities
 CFLAGS+=-I../Libraries/Utilities/STM32F4-Discovery
 
+#Device
+# stm32f4xx.h
+CFLAGS+=-I../Libraries/Device/STM32F4xx/Include
+
 all: $(BIN_IMAGE)
 
 $(BIN_IMAGE): $(EXECUTABLE)
