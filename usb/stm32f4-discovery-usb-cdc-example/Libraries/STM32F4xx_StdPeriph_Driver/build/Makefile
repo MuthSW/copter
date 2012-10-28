@@ -1,3 +1,6 @@
+# ../src/stm32f4xx_dac.c: In function 'DAC_Init':
+# ../src/stm32f4xx_dac.c:198:3: warning: implicit declaration of function 'assert_param'
+
 LIB = libSTM32F4xx_StdPeriph_Driver.a
 
 CC = arm-none-eabi-gcc
