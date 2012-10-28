@@ -1,6 +1,6 @@
-LIB = STM32_USB_OTG_Driver.a
 # ../src/usb_dcd_int.c:361:5: warning: dereferencing type-punned pointer will break strict-aliasing rules
 
+LIB = libSTM32_USB_OTG_Driver.a
 
 CC = arm-none-eabi-gcc
 AR = arm-none-eabi-ar
