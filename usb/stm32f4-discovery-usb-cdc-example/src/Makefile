@@ -56,25 +56,18 @@ $(BIN_IMAGE): $(EXECUTABLE)
 
 $(EXECUTABLE): main.c system_stm32f4xx.c startup_stm32f4xx.s stm32f4xx_it.c \
 	usb_bsp.c usbd_desc.c usbd_usr.c \
-	usbd_core.c \
 	stm32f4_discovery.c \
 	usbd_cdc.c \
-	usbd_cdc_core.c \
-	usb_dcd_int.c \
-	usbd_req.c \
-	usb_dcd.c \
-	usbd_ioreq.c \
-	../Libraries/STM32_USB_OTG_Driver/src/usb_core.c
+	../Libraries/STM32_USB_OTG_Driver/src/usb_core.c \
 #	../../Utilities/STM32F4-Discovery/stm32f4_discovery.c \
 #	../../Utilities/STM32F4-Discovery/stm32f4_discovery_audio_codec.c \
 #	../../Utilities/STM32F4-Discovery/stm32f4_discovery_lis302dl.c \
-# Tag: TestMissingLibSTART
-#	../Libraries/STM32_USB_OTG_Driver/src/usb_dcd_int.c \
-#	../Libraries/STM32_USB_OTG_Driver/src/usb_dcd.c \
-#	../Libraries/STM32_USB_Device_Library/Core/src/usbd_core.c \
-#	../Libraries/STM32_USB_Device_Library/Core/src/usbd_req.c \
-#	../Libraries/STM32_USB_Device_Library/Core/src/usbd_ioreq.c \
-#	../../STM32_USB_Device_Library/Class/cdc/src/usbd_cdc_core.c
+	../Libraries/STM32_USB_OTG_Driver/src/usb_dcd_int.c \
+	../Libraries/STM32_USB_OTG_Driver/src/usb_dcd.c \
+	../Libraries/STM32_USB_Device_Library/Core/src/usbd_core.c \
+	../Libraries/STM32_USB_Device_Library/Core/src/usbd_req.c \
+	../Libraries/STM32_USB_Device_Library/Core/src/usbd_ioreq.c \
+	../../STM32_USB_Device_Library/Class/cdc/src/usbd_cdc_core.c
 
 		
 	$(CC) $(CFLAGS) $^ -o $@ 
