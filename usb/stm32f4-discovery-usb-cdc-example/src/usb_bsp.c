@@ -24,6 +24,7 @@
 #include "usb_bsp.h"
 #include "usbd_conf.h"
 #include "stm32f4_discovery.h"
+#include "stm32f4xx_gpio.h" // for GPIO_Pin_*
 
 /** @addtogroup STM32_USB_OTG_DEVICE_LIBRARY
 * @{
