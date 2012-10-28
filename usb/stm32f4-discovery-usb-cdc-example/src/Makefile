@@ -68,7 +68,7 @@ $(EXECUTABLE): main.c system_stm32f4xx.c startup_stm32f4xx.s stm32f4xx_it.c \
 	../../STM32_USB_Device_Library/Class/cdc/src/usbd_cdc_core.c
 
 		
-	$(CC) $(CFLAGS) $^ -o $@  -L../../STM32F4xx_StdPeriph_Driver/build -lSTM32F4xx_StdPeriph_Driver -L../../STM32F_USB_OTG_Driver/build
+	$(CC) $(CFLAGS) $^ -o $@  -L../Libraries/STM32F4xx_StdPeriph_Driver/build -lSTM32F4xx_StdPeriph_Driver -L../Libraries/STM32F_USB_OTG_Driver/build
 
 clean:
 	rm -rf $(EXECUTABLE)
