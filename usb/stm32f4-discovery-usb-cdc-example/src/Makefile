@@ -44,6 +44,10 @@ CFLAGS+=-I../Libraries/Utilities/STM32F4-Discovery
 # stm32f4xx.h
 CFLAGS+=-I../Libraries/Device/STM32F4xx/Include
 
+#CMSIS
+# core_cm4.h
+CFLAGS+=-I../Libraries/CMSIS/Include
+
 all: $(BIN_IMAGE)
 
 $(BIN_IMAGE): $(EXECUTABLE)
