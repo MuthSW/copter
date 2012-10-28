@@ -2,8 +2,8 @@
 # Makefile take from /develop/STM/stlink/example/stm32f4/Projects/discovery_demo
 #
 
-EXECUTABLE=STM32F4-Discovery_Demo.elf
-BIN_IMAGE=STM32F4-Discovery_Demo.bin
+EXECUTABLE=stm32f4-discovery-usb-cdc-example.elf
+BIN_IMAGE=stm32f4-discovery-usb-cdc-example.bin
 
 CC=arm-none-eabi-gcc
 OBJCOPY=arm-none-eabi-objcopy
@@ -21,22 +21,22 @@ CFLAGS+=-Wl,-T,stm32_flash.ld
 CFLAGS+=-I./
 
 # stm32f4_discovery lib
-CFLAGS+=-I../../STM32F4xx_StdPeriph_Driver/inc
-CFLAGS+=-I../../STM32F4xx_StdPeriph_Driver/inc/device_support
-CFLAGS+=-I../../STM32F4xx_StdPeriph_Driver/inc/core_support
+CFLAGS+=-I../Libraries/STM32F4xx_StdPeriph_Driver/inc
+CFLAGS+=-I../Libraries/STM32F4xx_StdPeriph_Driver/inc/device_support
+CFLAGS+=-I../Libraries/STM32F4xx_StdPeriph_Driver/inc/core_support
 
 #STM32_USB_Device_Library
-CFLAGS+=-I../../STM32_USB_Device_Library/Class/hid/inc
-CFLAGS+=-I../../STM32_USB_Device_Library/Core/inc
+CFLAGS+=-I../Libraries/STM32_USB_Device_Library/Class/hid/inc
+CFLAGS+=-I../Libraries/STM32_USB_Device_Library/Core/inc
 
 #STM32_USB_OTG_Driver
-CFLAGS+=-I../../STM32_USB_OTG_Driver/inc
+CFLAGS+=-I../Libraries/STM32_USB_OTG_Driver/inc
 
 #STM32F4xx_StdPeriph_Driver\inc
-CFLAGS+=-I../../STM32F4xx_StdPeriph_Driver/inc
+CFLAGS+=-I../Libraries/STM32F4xx_StdPeriph_Driver/inc
 
 #Utilities
-CFLAGS+=-I../../Utilities/STM32F4-Discovery
+CFLAGS+=-I../Libraries/Utilities/STM32F4-Discovery
 
 all: $(BIN_IMAGE)
 
@@ -48,11 +48,11 @@ $(EXECUTABLE): main.c selftest.c system_stm32f4xx.c startup_stm32f4xx.s stm32f4x
 	../../Utilities/STM32F4-Discovery/stm32f4_discovery.c \
 	../../Utilities/STM32F4-Discovery/stm32f4_discovery_audio_codec.c \
 	../../Utilities/STM32F4-Discovery/stm32f4_discovery_lis302dl.c \
-	../../STM32_USB_OTG_Driver/src/usb_dcd_int.c \
-	../../STM32_USB_OTG_Driver/src/usb_dcd.c \
-	../../STM32_USB_Device_Library/Core/src/usbd_core.c \
-	../../STM32_USB_Device_Library/Core/src/usbd_req.c \
-	../../STM32_USB_Device_Library/Core/src/usbd_ioreq.c \
+	../Libraries/STM32_USB_OTG_Driver/src/usb_dcd_int.c \
+	../Libraries/STM32_USB_OTG_Driver/src/usb_dcd.c \
+	../Libraries/STM32_USB_Device_Library/Core/src/usbd_core.c \
+	../Libraries/STM32_USB_Device_Library/Core/src/usbd_req.c \
+	../Libraries/STM32_USB_Device_Library/Core/src/usbd_ioreq.c \
 	../../STM32_USB_Device_Library/Class/hid/src/usbd_hid_core.c \
 
 		
