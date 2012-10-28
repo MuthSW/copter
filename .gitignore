@@ -1,3 +1,4 @@
 *.d
 *.elf
 *.a
+USB_Printf.bin
