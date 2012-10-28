@@ -30,6 +30,10 @@
                                               
 /* Includes ------------------------------------------------------------------*/
  #include "stm32f4xx.h"
+#include "stm32f4xx_gpio.h" // for GPIO_Pin_*
+#include "stm32f4xx_rcc.h" // for RCC_AHB1Periph_GPIOA
+#include "stm32f4xx_exti.h" // for EXTI_Line0
+#include "misc.h" // for NVIC_InitTypeDef
    
 /** @addtogroup Utilities
   * @{
