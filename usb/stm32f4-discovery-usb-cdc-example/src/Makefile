@@ -28,7 +28,7 @@ CFLAGS+=-I../Libraries/STM32F4xx_StdPeriph_Driver/inc/device_support
 CFLAGS+=-I../Libraries/STM32F4xx_StdPeriph_Driver/inc/core_support
 
 #STM32_USB_Device_Library
-CFLAGS+=-I../Libraries/STM32_USB_Device_Library/Class/hid/inc
+CFLAGS+=-I../Libraries/STM32_USB_Device_Library/Class/cdc/inc
 CFLAGS+=-I../Libraries/STM32_USB_Device_Library/Core/inc
 
 #STM32_USB_OTG_Driver
