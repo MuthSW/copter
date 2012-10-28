@@ -6,16 +6,24 @@ RANLIB = arm-none-eabi-ranlib
 
 CFLAGS = -Wall -O2 -mlittle-endian -mthumb
 CFLAGS += -mcpu=cortex-m4 -ffreestanding -nostdlib
-CFLAGS += -I../inc -I../inc/device_support -I../inc/core_support
-# --- different to direcs:
-# CFLAGS += -I../../Device/STM32F4xx/Include
-# CFLAGS += -I../../CMSIS/Include
-# ---
+
+#usb_conf.h
+CFLAGS+=-DUSE_USB_OTG_FS=1
+CFLAGS += -I../inc
+# for stm32f4xx.h
+CFLAGS += -I../../Device/STM32F4xx/Include
+# for core_cm4.h
+CFLAGS += -I../../CMSIS/Include
+# for usb_conf.h
+CFLAGS += -I../../../src
+# for stm32f4xx_gpio.h
+CFLAGS+=-I../../STM32F4xx_StdPeriph_Driver/inc
+
 
 SRCS = \
 ../src/usb_core.c \
-../src/ usb_dcd_int.c \
-../src/ usb_dcd.c
+../src/usb_dcd_int.c \
+../src/usb_dcd.c
 
 OBJS = $(SRCS:.c=.o)
 
