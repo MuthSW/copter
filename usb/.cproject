@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?fileVersion 4.0.0?>
+
+<cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
+	<storageModule moduleId="org.eclipse.cdt.core.settings">
+		<cconfiguration id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.debug.1983600423">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.debug.1983600423" moduleId="org.eclipse.cdt.core.settings" name="Debug">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.GNU_ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.MakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.application" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.cross.arm.gnu.buildArtefactType.application" description="" id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.debug.1983600423" name="Debug" parent="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.debug">
+					<folderInfo id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.debug.1983600423." name="/" resourcePath="">
+						<toolChain id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.toolchain.debug.786894284" name="ARM Mac OS X GCC (Summon)" superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.toolchain.debug">
+							<option id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.option.debugging.level.1570689015" superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.option.debugging.level" value="org.eclipse.cdt.cross.arm.gnu.base.option.debugging.level.max" valueType="enumerated"/>
+							<targetPlatform id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.platform.debug.748388856" isAbstract="false" name="Mac OS X Platform" superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.platform.debug"/>
+							<builder buildPath="${workspace_loc:/stm32f4-discovery-usb-cdc/Debug}" id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.builder.debug.1070697772" managedBuildOn="true" name="ARM Summon Mac OS X GNU Make builder.Debug" superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.builder.debug"/>
+							<tool id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.assembler.debug.1792274642" name="ARM Summon Mac OS X GCC Assembler" superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.assembler.debug">
+								<inputType id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.assembler.base.input.1572534308" superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.assembler.base.input"/>
+							</tool>
+							<tool id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.c.compiler.debug.514080214" name="ARM Summon Mac OS X GCC C Compiler" superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.c.compiler.debug">
+								<option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.optimization.level.2109934036" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.optimization.level" value="org.eclipse.cdt.cross.arm.gnu.base.option.optimization.level.none" valueType="enumerated"/>
+								<inputType id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.c.compiler.base.input.1612736788" superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.c.compiler.base.input"/>
+							</tool>
+							<tool id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.cpp.compiler.debug.429150243" name="ARM Summon Mac OS X GCC C++ Compiler" superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.cpp.compiler.debug">
+								<option id="org.eclipse.cdt.cross.arm.gnu.cpp.compiler.option.optimization.level.963047138" superClass="org.eclipse.cdt.cross.arm.gnu.cpp.compiler.option.optimization.level" value="org.eclipse.cdt.cross.arm.gnu.base.option.optimization.level.none" valueType="enumerated"/>
+							</tool>
+							<tool id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.c.linker.debug.209814639" name="ARM Summon Mac OS X GCC C Linker" superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.c.linker.debug">
+								<inputType id="org.eclipse.cdt.cross.arm.gnu.c.linker.input.1102670023" superClass="org.eclipse.cdt.cross.arm.gnu.c.linker.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+								</inputType>
+							</tool>
+							<tool id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.cpp.linker.debug.279309586" name="ARM Summon Mac OS X GCC C++ Linker" superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.cpp.linker.debug"/>
+							<tool id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.archiver.base.1377747536" name="ARM Summon Mac OS X GCC Archiver" superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.archiver.base"/>
+							<tool id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.createflash.debug.230152179" name="ARM Summon Mac OS X GNU Create Flash Image" superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.createflash.debug"/>
+							<tool id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.createlisting.debug.1885255130" name="ARM Summon Mac OS X GNU Create Listing" superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.createlisting.debug"/>
+							<tool id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.printsize.debug.668240393" name="ARM Summon Mac OS X GNU Print Size" superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.printsize.debug"/>
+						</toolChain>
+					</folderInfo>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+		<cconfiguration id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.release.765898130">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.release.765898130" moduleId="org.eclipse.cdt.core.settings" name="Release">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.GNU_ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.MakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.application" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.cross.arm.gnu.buildArtefactType.application" description="" id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.release.765898130" name="Release" parent="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.release">
+					<folderInfo id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.release.765898130." name="/" resourcePath="">
+						<toolChain id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.toolchain.release.206127112" name="ARM Mac OS X GCC (Summon)" superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.toolchain.release">
+							<option id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.option.debugging.level.106608" superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.option.debugging.level" value="org.eclipse.cdt.cross.arm.gnu.base.option.debugging.level.none" valueType="enumerated"/>
+							<targetPlatform id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.platform.release.494347471" isAbstract="false" name="Mac OS X Platform" superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.platform.release"/>
+							<builder buildPath="${workspace_loc:/stm32f4-discovery-usb-cdc/Release}" id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.builder.release.1266767976" managedBuildOn="true" name="ARM Summon Mac OS X GNU Make builder.Release" superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.builder.release"/>
+							<tool id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.assembler.release.1773478780" name="ARM Summon Mac OS X GCC Assembler" superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.assembler.release">
+								<inputType id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.assembler.base.input.1272377882" superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.assembler.base.input"/>
+							</tool>
+							<tool id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.c.compiler.release.1239565999" name="ARM Summon Mac OS X GCC C Compiler" superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.c.compiler.release">
+								<option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.optimization.level.779159107" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.optimization.level" value="org.eclipse.cdt.cross.arm.gnu.base.option.optimization.level.size" valueType="enumerated"/>
+								<inputType id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.c.compiler.base.input.1703315107" superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.c.compiler.base.input"/>
+							</tool>
+							<tool id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.cpp.compiler.release.525549047" name="ARM Summon Mac OS X GCC C++ Compiler" superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.cpp.compiler.release">
+								<option id="org.eclipse.cdt.cross.arm.gnu.cpp.compiler.option.optimization.level.449900465" superClass="org.eclipse.cdt.cross.arm.gnu.cpp.compiler.option.optimization.level" value="org.eclipse.cdt.cross.arm.gnu.base.option.optimization.level.size" valueType="enumerated"/>
+							</tool>
+							<tool id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.c.linker.release.371239207" name="ARM Summon Mac OS X GCC C Linker" superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.c.linker.release">
+								<inputType id="org.eclipse.cdt.cross.arm.gnu.c.linker.input.702740163" superClass="org.eclipse.cdt.cross.arm.gnu.c.linker.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+								</inputType>
+							</tool>
+							<tool id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.cpp.linker.release.1859229672" name="ARM Summon Mac OS X GCC C++ Linker" superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.cpp.linker.release"/>
+							<tool id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.archiver.base.1785350290" name="ARM Summon Mac OS X GCC Archiver" superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.archiver.base"/>
+							<tool id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.createflash.release.1271864930" name="ARM Summon Mac OS X GNU Create Flash Image" superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.createflash.release"/>
+							<tool id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.createlisting.release.1846973785" name="ARM Summon Mac OS X GNU Create Listing" superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.createlisting.release"/>
+							<tool id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.printsize.release.270115687" name="ARM Summon Mac OS X GNU Print Size" superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.printsize.release"/>
+						</toolChain>
+					</folderInfo>
+				</configuration>
+			</storageModule>
+		</cconfiguration>
+	</storageModule>
+	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+		<project id="stm32f4-discovery-usb-cdc.org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.1876847573" name="ARM Cross Target Application" projectType="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf"/>
+	</storageModule>
+	<storageModule moduleId="scannerConfiguration">
+		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.release.765898130;org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.release.765898130.;org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.c.compiler.release.1239565999;org.eclipse.cdt.cross.arm.gnu.summon.macosx.c.compiler.base.input.1703315107">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_SUM_GCCManagedMakePerProjectProfileC"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.debug.1983600423;org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.debug.1983600423.;org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.assembler.debug.1792274642;org.eclipse.cdt.cross.arm.gnu.summon.macosx.assembler.base.input.1572534308">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_SUM_GCCManagedMakePerProjectProfileC"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.debug.1983600423;org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.debug.1983600423.;org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.c.compiler.debug.514080214;org.eclipse.cdt.cross.arm.gnu.summon.macosx.c.compiler.base.input.1612736788">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_SUM_GCCManagedMakePerProjectProfileC"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.release.765898130;org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.release.765898130.;org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.assembler.release.1773478780;org.eclipse.cdt.cross.arm.gnu.summon.macosx.assembler.base.input.1272377882">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_SUM_GCCManagedMakePerProjectProfileC"/>
+		</scannerConfigBuildInfo>
+	</storageModule>
+</cproject>
