@@ -17,10 +17,10 @@
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.application" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.cross.arm.gnu.buildArtefactType.application" description="" id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.debug.1365096482" name="Debug" parent="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.debug">
+				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.application" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.cross.arm.gnu.buildArtefactType.application" description="" id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.debug.1365096482" name="Debug" parent="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.debug" postannouncebuildStep="Create .bin object" postbuildStep="arm-none-eabi-objcopy -O binary ./${ProjName}.elf ./${ProjName}.bin">
 					<folderInfo id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.debug.1365096482." name="/" resourcePath="">
 						<toolChain id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.toolchain.debug.1815116340" name="ARM Mac OS X GCC (Summon)" superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.toolchain.debug">
-							<option id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.option.debugging.level.224253010" name="Debug level" superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.option.debugging.level" value="org.eclipse.cdt.cross.arm.gnu.base.option.debugging.level.max" valueType="enumerated"/>
+							<option id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.option.debugging.level.224253010" name="Debug level" superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.option.debugging.level" value="org.eclipse.cdt.cross.arm.gnu.base.option.debugging.level.default" valueType="enumerated"/>
 							<targetPlatform id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.platform.debug.959576774" isAbstract="false" name="Mac OS X Platform" superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.platform.debug"/>
 							<builder buildPath="${workspace_loc:/stm32f4-discovery-usb-cdc/Debug}" id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.builder.debug.1155184729" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="ARM Summon Mac OS X GNU Make builder" superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.builder.debug"/>
 							<tool id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.assembler.debug.625590884" name="ARM Summon Mac OS X GCC Assembler" superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.assembler.debug">
@@ -28,13 +28,13 @@
 							</tool>
 							<tool id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.c.compiler.debug.149617250" name="ARM Summon Mac OS X GCC C Compiler" superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.c.compiler.debug">
 								<option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.optimization.level.1315464889" name="Optimization level" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.optimization.level" value="org.eclipse.cdt.cross.arm.gnu.base.option.optimization.level.none" valueType="enumerated"/>
-								<option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.preprocessor.def.373454600" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.preprocessor.def" valueType="definedSymbols">
+								<option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.preprocessor.def.373454600" name="Defined symbols (-D)" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.preprocessor.def" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="USE_STM32F4_DISCOVERY"/>
 									<listOptionValue builtIn="false" value="STM32F4XX"/>
 									<listOptionValue builtIn="false" value="USE_STDPERIPH_DRIVER"/>
 									<listOptionValue builtIn="false" value="USE_USB_OTG_FS"/>
 								</option>
-								<option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.include.paths.2080017068" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.include.paths" valueType="includePath">
+								<option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.include.paths.2080017068" name="Include paths (-I)" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Libraries/STM32_USB_Device_Library/Core/inc}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Libraries/STM32_USB_Device_Library/Class/cdc/inc}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Libraries/STM32_USB_OTG_Driver/inc}&quot;"/>
@@ -49,8 +49,9 @@
 								<option id="org.eclipse.cdt.cross.arm.gnu.cpp.compiler.option.optimization.level.1890425405" name="Optimization level" superClass="org.eclipse.cdt.cross.arm.gnu.cpp.compiler.option.optimization.level" value="org.eclipse.cdt.cross.arm.gnu.base.option.optimization.level.none" valueType="enumerated"/>
 							</tool>
 							<tool id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.c.linker.debug.36705538" name="ARM Summon Mac OS X GCC C Linker" superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.c.linker.debug">
-								<option id="org.eclipse.cdt.cross.arm.gnu.c.link.option.scriptfile.17532621" superClass="org.eclipse.cdt.cross.arm.gnu.c.link.option.scriptfile" value="/Users/markus/develop/copter/usb/stm32f4-discovery-usb-cdc-example/stm32_flash.ld" valueType="string"/>
-								<option id="org.eclipse.cdt.cross.arm.gnu.c.link.option.otherflags.2141884683" superClass="org.eclipse.cdt.cross.arm.gnu.c.link.option.otherflags" value="-WI,-cref,-u,Reset_Handler" valueType="string"/>
+								<option id="org.eclipse.cdt.cross.arm.gnu.c.link.option.scriptfile.17532621" name="Script file (-T)" superClass="org.eclipse.cdt.cross.arm.gnu.c.link.option.scriptfile" value="/Users/markus/develop/copter/usb/stm32f4-discovery-usb-cdc-example/stm32_flash.ld" valueType="string"/>
+								<option id="org.eclipse.cdt.cross.arm.gnu.c.link.option.otherflags.2141884683" name="Other flags" superClass="org.eclipse.cdt.cross.arm.gnu.c.link.option.otherflags" value="-WI,-cref,-u,Reset_Handler" valueType="string"/>
+								<option id="org.eclipse.cdt.cross.arm.gnu.c.link.option.gcsections.1226067139" superClass="org.eclipse.cdt.cross.arm.gnu.c.link.option.gcsections" value="true" valueType="boolean"/>
 								<inputType id="org.eclipse.cdt.cross.arm.gnu.c.linker.input.20782735" superClass="org.eclipse.cdt.cross.arm.gnu.c.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
 									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
