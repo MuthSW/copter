@@ -51,7 +51,8 @@
 							<tool id="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.c.linker.debug.36705538" name="ARM Summon Mac OS X GCC C Linker" superClass="org.eclipse.cdt.cross.arm.gnu.summon.macosx.elf.c.linker.debug">
 								<option id="org.eclipse.cdt.cross.arm.gnu.c.link.option.scriptfile.17532621" name="Script file (-T)" superClass="org.eclipse.cdt.cross.arm.gnu.c.link.option.scriptfile" value="/Users/markus/develop/copter/usb/stm32f4-discovery-usb-cdc-example/stm32_flash.ld" valueType="string"/>
 								<option id="org.eclipse.cdt.cross.arm.gnu.c.link.option.otherflags.2141884683" name="Other flags" superClass="org.eclipse.cdt.cross.arm.gnu.c.link.option.otherflags" value="-WI,-cref,-u,Reset_Handler" valueType="string"/>
-								<option id="org.eclipse.cdt.cross.arm.gnu.c.link.option.gcsections.1226067139" superClass="org.eclipse.cdt.cross.arm.gnu.c.link.option.gcsections" value="true" valueType="boolean"/>
+								<option id="org.eclipse.cdt.cross.arm.gnu.c.link.option.gcsections.1226067139" name="Remove unused sections (-Xlinker --gc-sections)" superClass="org.eclipse.cdt.cross.arm.gnu.c.link.option.gcsections" value="true" valueType="boolean"/>
+								<option id="org.eclipse.cdt.cross.arm.gnu.c.link.option.nostart.841560872" superClass="org.eclipse.cdt.cross.arm.gnu.c.link.option.nostart" value="false" valueType="boolean"/>
 								<inputType id="org.eclipse.cdt.cross.arm.gnu.c.linker.input.20782735" superClass="org.eclipse.cdt.cross.arm.gnu.c.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
 									<additionalInput kind="additionalinput" paths="$(LIBS)"/>

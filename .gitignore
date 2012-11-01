@@ -1,2 +1,3 @@
 *.d
 usb/stm32f4-discovery-usb-cdc-example/Debug
+*.a
