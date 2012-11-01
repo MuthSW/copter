@@ -2,3 +2,13 @@
 *.elf
 *.a
 USB_Printf.bin
+org.eclipse.ltk.core.refactoring.prefs
+usb/stm32f4-discovery-usb-cdc-example/Debug/stm32f4-discovery-usb-cdc.bin
+usb/stm32f4-discovery-usb-cdc-example/Debug/stm32f4-discovery-usb-cdc.map
+usb/stm32f4-discovery-usb-cdc-example/Debug/stm32f4-discovery-usb-cdc.hex
+usb/stm32f4-discovery-usb-cdc-example/Debug/stm32f4-discovery-usb-cdc.lst
+usb/stm32f4-discovery-usb-cdc-example/Debug/objects.mk
+usb/stm32f4-discovery-usb-cdc-example/Debug/sources.mk
+usb/stm32f4-discovery-usb-cdc-example/Debug/makefile
+*.lst
+*.mk
