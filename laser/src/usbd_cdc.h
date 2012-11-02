@@ -34,7 +34,18 @@
 #define OTHER_CONFIG                    1
 
 /* Exported macro ------------------------------------------------------------*/
+
 /* Exported functions ------------------------------------------------------- */
+/**
+  * @brief  cdc_DataTx
+  *         CDC received data to be send over USB IN endpoint are managed in
+  *         this function.
+  * @param  Buf: Buffer of data to be sent
+  * @param  Len: Number of data to be sent (in bytes)
+  * @retval Result of the opeartion: USBD_OK
+  */
+uint16_t cdc_DataTx (uint8_t* Buf, uint32_t Len);
+
 
 #endif /* __USBD_CDC_VCP_H */
 
