@@ -72,6 +72,8 @@ int main(void)
 
   int i = 0;
 
+	uint8_t buffer[] = "hello world";
+	cdc_DataTx (buffer, (uint32_t) 11);
 
 
   /* Infinite loop */
