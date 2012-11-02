@@ -31,6 +31,7 @@
 #include "usbd_cdc.h"
 #include "usbd_usr.h"
 #include "usbd_desc.h"
+#include "usart.h" // this is for debugging only (to show messages on a serial console)
 
 
 /* Private macro */
