@@ -31,7 +31,10 @@
 #include "usbd_cdc.h"
 #include "usbd_usr.h"
 #include "usbd_desc.h"
+
+#include "defaults.h"
 #include "usart.h" // this is for debugging only (to show messages on a serial console)
+#include "led.h"
 
 
 /* Private macro */
@@ -82,6 +85,8 @@ __ALIGN_BEGIN USB_OTG_CORE_HANDLE    USB_OTG_dev __ALIGN_END ;
 */
 int main(void)
 {
+	initializeLEDs();	// onboard LED init
+/*
 	STM32F4_Discovery_LEDInit(LED3);
 	STM32F4_Discovery_LEDInit(LED4);
 	STM32F4_Discovery_LEDInit(LED5);
@@ -90,9 +95,18 @@ int main(void)
 
 	STM32F4_Discovery_LEDOn(LED3);
 	Delay(0xFFFF);
+*/
 
+	// usart init (debug console)
+	initializeUSART(USART3, 115200);
+	receiveUSARTInterrupt(USART3);
+
+	switchLED(LEDGREEN, ON);	// we're ready
+
+	putString(USART3, " Here we go!\r\n");
+/*
 	//usb init
-	  USBD_Init(&USB_OTG_dev,
+	USBD_Init(&USB_OTG_dev,
 	#ifdef USE_USB_OTG_HS
 	  USB_OTG_HS_CORE_ID,
 	#else
@@ -103,11 +117,12 @@ int main(void)
 	  &USR_cb);
 
 
+*/
+	int i = 0;
 
-  int i = 0;
-
-	uint8_t buffer[] = "hello world";
-	cdc_DataTx (buffer, (uint32_t) 11);
+	// send string to laser
+	// uint8_t buffer[] = "hello world";
+	// cdc_DataTx (buffer, (uint32_t) 11);
 
 
   /* Infinite loop */
@@ -118,7 +133,7 @@ int main(void)
   {
 	if (i++ == 0x100000)
     {
-    	STM32F4_Discovery_LEDToggle(LED4);
+ //   	STM32F4_Discovery_LEDToggle(LED4);
     	i = 0;
     }
   }
