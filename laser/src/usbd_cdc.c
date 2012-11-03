@@ -1,24 +1,3 @@
-/**
-  ******************************************************************************
-  * @file    usbd_cdc_vcp.c
-  * @author  MCD Application Team
-  * @version V1.0.0
-  * @date    22-July-2011
-  * @brief   Generic media access Layer.
-  ******************************************************************************
-  * @attention
-  *
-  * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
-  * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE
-  * TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY
-  * DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING
-  * FROM THE CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE
-  * CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
-  *
-  * <h2><center>&copy; COPYRIGHT 2011 STMicroelectronics</center></h2>
-  ******************************************************************************
-  */ 
-
 #ifdef USB_OTG_HS_INTERNAL_DMA_ENABLED 
 #pragma     data_alignment = 4 
 #endif /* USB_OTG_HS_INTERNAL_DMA_ENABLED */
@@ -209,8 +188,9 @@ static uint16_t cdc_DataRx (uint8_t* Buf, uint32_t Len)
 //this function is run when the user button is pushed
 void DISCOVERY_EXTI_IRQHandler(void)
 {
-	uint8_t buffer[] = "terve"; // "terve" is hello in finnish :)
-	cdc_DataTx (buffer, (uint32_t) 5);
+//	uint8_t buffer[] = "terve"; // "terve" is hello in finnish :)
+//	cdc_DataTx (buffer, (uint32_t) 5);
+	putString(USART3, " Button pressed.\r\n");
 }
 
 
