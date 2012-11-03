@@ -31,8 +31,7 @@
 #include "usbd_cdc.h"
 #include "usbd_usr.h"
 #include "usbd_desc.h"
-
-#include "defaults.h"
+/* My Includes */
 #include "usart.h" // this is for debugging only (to show messages on a serial console)
 
 
@@ -84,7 +83,6 @@ __ALIGN_BEGIN USB_OTG_CORE_HANDLE    USB_OTG_dev __ALIGN_END ;
 */
 int main(void)
 {
-/*
 	STM32F4_Discovery_LEDInit(LED3);
 	STM32F4_Discovery_LEDInit(LED4);
 	STM32F4_Discovery_LEDInit(LED5);
@@ -93,7 +91,6 @@ int main(void)
 
 	STM32F4_Discovery_LEDOn(LED3);
 	Delay(0xFFFF);
-*/
 
 	// usart init (debug console)
 	initializeUSART(USART3, 115200);
