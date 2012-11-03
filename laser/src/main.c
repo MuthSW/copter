@@ -34,7 +34,6 @@
 
 #include "defaults.h"
 #include "usart.h" // this is for debugging only (to show messages on a serial console)
-#include "led.h"
 
 
 /* Private macro */
@@ -85,7 +84,6 @@ __ALIGN_BEGIN USB_OTG_CORE_HANDLE    USB_OTG_dev __ALIGN_END ;
 */
 int main(void)
 {
-//	initializeLEDs();	// onboard LED init
 /*
 	STM32F4_Discovery_LEDInit(LED3);
 	STM32F4_Discovery_LEDInit(LED4);
@@ -100,8 +98,6 @@ int main(void)
 	// usart init (debug console)
 	initializeUSART(USART3, 115200);
 	receiveUSARTInterrupt(USART3);
-
-	switchLED(LEDGREEN, ON);	// we're ready
 
 	putString(USART3, " Here we go!\r\n");
 /*
