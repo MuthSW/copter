@@ -85,7 +85,7 @@ __ALIGN_BEGIN USB_OTG_CORE_HANDLE    USB_OTG_dev __ALIGN_END ;
 */
 int main(void)
 {
-	initializeLEDs();	// onboard LED init
+//	initializeLEDs();	// onboard LED init
 /*
 	STM32F4_Discovery_LEDInit(LED3);
 	STM32F4_Discovery_LEDInit(LED4);

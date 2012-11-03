@@ -88,7 +88,8 @@ void initializeUSART(USART_TypeDef* USART, int BaudRate){
 	GPIOInitStructure.GPIO_Mode = GPIO_Mode_AF;
 	GPIOInitStructure.GPIO_OType = GPIO_OType_PP;
 	GPIOInitStructure.GPIO_Speed = GPIO_Speed_100MHz;
-	GPIOInitStructure.GPIO_PuPd = GPIO_PuPd_UP;
+//	GPIOInitStructure.GPIO_PuPd = GPIO_PuPd_UP;
+	GPIOInitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
 	GPIO_Init(USARTPort, &GPIOInitStructure);
 
 	//RX
