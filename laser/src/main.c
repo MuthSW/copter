@@ -6,6 +6,7 @@
 #include "usbd_desc.h"
 /* My Includes */
 #include "usart.h" // this is for debugging (to show messages on a serial console)
+#include "urg_ctrl.h" // for HOKUYO URG-04LX-UG01 laser
 
 
 /* Private macro */
@@ -106,7 +107,20 @@ int main(void)
 	}
 }
 
+
 void Delay(__IO uint32_t nTick)
 {
   for(; nTick != 0; nTick--);
+}
+
+
+void urg_exit(urg_t *urg, const char *message)
+{
+	// putString(USART3, "%s: %s\n", message, urg_error(urg)); 		@todo bring to console
+	urg_disconnect(urg);
+
+#ifdef MSC
+	getchar();
+#endif
+	exit(1);
 }
