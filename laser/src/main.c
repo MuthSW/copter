@@ -36,6 +36,39 @@
 
 /* Private macro */
 /* Private variables */
+
+/* Defines */
+#define USART1RxBufferSize 		0	//USART1
+#define USART2RxBufferSize 		0	//USART2
+#define USART3RxBufferSize 		5	//USART3
+#define USART6RxBufferSize 		0	//USART6
+
+/* Type definitions */
+typedef enum { false, true } bool;
+
+
+/* Variables */
+//USART1
+extern uint8_t USART1Buffer[USART1RxBufferSize];
+extern __IO uint16_t USART1RxCounter = 0;
+extern __IO bool USART1DataReady = false;
+
+//USART2
+extern uint8_t USART2Buffer[USART2RxBufferSize];
+extern __IO uint16_t USART2RxCounter = 0;
+extern __IO bool USART2DataReady = false;
+
+//USART3
+extern uint8_t USART3Buffer[USART3RxBufferSize];
+extern __IO uint16_t USART3RxCounter = 0;
+extern __IO bool USART3DataReady = false;
+
+//USART6
+extern uint8_t USART6Buffer[USART6RxBufferSize];
+extern __IO uint16_t USART6RxCounter = 0;
+extern __IO bool USART6DataReady = false;
+
+
 /* Private function prototypes */
 void Delay(__IO uint32_t nTick);
 /* Private functions */
