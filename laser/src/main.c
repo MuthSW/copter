@@ -1,30 +1,3 @@
-/**
-*****************************************************************************
-**
-**  File        : main.c
-**
-**  Abstract    : main function.
-**
-**  Functions   : main
-**
-**  Environment : Atollic TrueSTUDIO(R)
-**                STMicroelectronics STM32F4xx Standard Peripherals Library
-**
-**  Distribution: The file is distributed “as is,” without any warranty
-**                of any kind.
-**
-**  (c)Copyright Atollic AB.
-**  You may use this file as-is or modify it according to the needs of your
-**  project. Distribution of this file (unmodified or modified) is not
-**  permitted. Atollic AB permit registered Atollic TrueSTUDIO(R) users the
-**  rights to distribute the assembled, compiled & linked contents of this
-**  file as part of an application binary file, provided that it is built
-**  using the Atollic TrueSTUDIO(R) toolchain.
-**
-**
-*****************************************************************************
-*/
-
 /* Includes */
 #include "stm32f4xx.h"
 #include "usbd_cdc_core.h"
@@ -32,7 +5,7 @@
 #include "usbd_usr.h"
 #include "usbd_desc.h"
 /* My Includes */
-#include "usart.h" // this is for debugging only (to show messages on a serial console)
+#include "usart.h" // this is for debugging (to show messages on a serial console)
 
 
 /* Private macro */
@@ -83,6 +56,7 @@ __ALIGN_BEGIN USB_OTG_CORE_HANDLE    USB_OTG_dev __ALIGN_END ;
 */
 int main(void)
 {
+	// LED init
 	STM32F4_Discovery_LEDInit(LED3);
 	STM32F4_Discovery_LEDInit(LED4);
 	STM32F4_Discovery_LEDInit(LED5);
@@ -92,13 +66,13 @@ int main(void)
 	STM32F4_Discovery_LEDOn(LED3);
 	Delay(0xFFFF);
 
-	// usart init (debug console)
+	// USART init (debug console)
 	initializeUSART(USART3, 115200);
 	receiveUSARTInterrupt(USART3);
 
 	putString(USART3, " Here we go!\r\n");
-/*
-	//usb init
+
+	// USB init
 	USBD_Init(&USB_OTG_dev,
 	#ifdef USE_USB_OTG_HS
 	  USB_OTG_HS_CORE_ID,
@@ -110,7 +84,7 @@ int main(void)
 	  &USR_cb);
 
 
-*/
+
 	int i = 0;
 
 	// send string to laser
@@ -118,18 +92,18 @@ int main(void)
 	// cdc_DataTx (buffer, (uint32_t) 11);
 
 
-  /* Infinite loop */
-  // all magic happens in usbd_cdc.c file
-  // other file you should look into is usbd_desc.h
-  // there is descriptor for your device, ie. what OS will see when you connect the device.
-  while (1)
-  {
-	if (i++ == 0x100000)
-    {
- //   	STM32F4_Discovery_LEDToggle(LED4);
-    	i = 0;
-    }
-  }
+	/* Infinite loop */
+	// all magic happens in usbd_cdc.c file
+	// other file you should look into is usbd_desc.h
+	// there is descriptor for your device, ie. what OS will see when you connect the device.
+	while (1)
+	{
+		if (i++ == 0x100000)
+		{
+			STM32F4_Discovery_LEDToggle(LED4);
+			i = 0;
+		}
+	}
 }
 
 void Delay(__IO uint32_t nTick)
