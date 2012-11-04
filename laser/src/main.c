@@ -116,11 +116,11 @@ void Delay(__IO uint32_t nTick)
 
 void urg_exit(urg_t *urg, const char *message)
 {
-	// putString(USART3, "%s: %s\n", message, urg_error(urg)); 		@todo bring to console
-	urg_disconnect(urg);
+	// putString(USART3, "%s: %s\n", message, urg_error(urg)); 		@todo: bring to console
+	urg_disconnect(urg);										//	@todo: when do we call this?
 
 #ifdef MSC
 	getchar();
 #endif
-	exit(1);
+//	exit(1);														@todo: when do we call this?
 }

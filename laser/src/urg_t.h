@@ -11,7 +11,7 @@
 */
 
 #include "urg_parameter_t.h"
-#include "serial_t.h"
+// #include "serial_t.h" 													removed due to own USB communication
 
 
 /*!
@@ -29,7 +29,7 @@ typedef enum {
 */
 typedef struct {
 
-  serial_t serial_;              /*!< Structure of serial control */
+//  serial_t serial_;              /*!< Structure of serial control */		removed due to own USB communication
   int errno_;                    /*!< Store error number */
   urg_parameter_t parameters_;   /*!< Sensor parameter */
 
