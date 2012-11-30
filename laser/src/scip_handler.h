@@ -11,7 +11,7 @@
 */
 
 #include "urg_parameter_t.h"
-#include "serial_t.h"
+// #include "serial_t.h" 													removed due to own USB communication
 
 
 enum {
